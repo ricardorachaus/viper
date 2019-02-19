@@ -72,8 +72,11 @@ final class CreateOrderView: UIView {
         view.setTitleColor(.black, for: .normal)
         view.layer.cornerRadius = 10
         view.backgroundColor = .lightGray
+        view.addTarget(self, action: #selector(requestOrder), for: .touchUpInside)
         return view
     }()
+    
+    var delegate: CreateOrderDelegate?
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -82,6 +85,17 @@ final class CreateOrderView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func requestOrder() {
+        if let item = itemTextField.text,
+           let paymentMethod = paymentMethodTextField.text,
+           let price = priceTextField.text {
+            let order = Order(item: item,
+                              paymentMethod: paymentMethod,
+                              price: price)
+            delegate?.create(order: order)
+        }
     }
     
 }

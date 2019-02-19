@@ -6,8 +6,11 @@
 //  Copyright © 2019 Ricardo Rachaus. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-final class ConfirmOrderRouter {
-    
+final class ConfirmOrderRouter: ConfirmOrderWireframeProtocol {
+    func showCreateOrder(from view: UIViewController) {
+        let controller = CreateOrderFactory.make()
+        view.show(controller, sender: self)
+    }
 }

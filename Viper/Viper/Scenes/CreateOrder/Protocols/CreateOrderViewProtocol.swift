@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol CreateOrderViewProtocol: class {
+    func displayOrder(status: Bool)
+}

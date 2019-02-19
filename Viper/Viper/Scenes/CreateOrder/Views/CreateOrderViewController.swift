@@ -15,7 +15,10 @@ final class CreateOrderViewController: UIViewController {
         return view
     }()
     
-    init() {
+    var presenter: CreateOrderPresenterProtocol
+    
+    init(presenter: CreateOrderPresenterProtocol) {
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -29,12 +32,28 @@ final class CreateOrderViewController: UIViewController {
     
 }
 
+extension CreateOrderViewController: CreateOrderViewProtocol {
+    func displayOrder(status: Bool) {
+        print("Order status: " + status.description)
+        presenter.showOrder(from: self)
+    }
+}
+
+extension CreateOrderViewController: CreateOrderDelegate {
+    func create(order: Order) {
+        presenter.request(order: order)
+    }
+}
+
 extension CreateOrderViewController: CodeView {
     func buildViewHierarchy() {
         view = theView
     }
     
     func setupContraints() {}
-    func setupAdditionalConfiguration() {}
+    
+    func setupAdditionalConfiguration() {
+        theView.delegate = self
+    }
     
 }

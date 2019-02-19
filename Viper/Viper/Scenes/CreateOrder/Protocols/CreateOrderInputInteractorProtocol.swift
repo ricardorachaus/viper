@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol CreateOrderInputInteractorProtocol: class {
+    var presenter: CreateOrderOutputInteractorProtocol { get set }
+    
+    func create(order: Order)
+}

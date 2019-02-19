@@ -1,5 +1,5 @@
 //
-//  CreateOrderOutputInteractorProtocol.swift
+//  ConfirmOrderDelegate.swift
 //  Viper
 //
 //  Created by Ricardo Rachaus on 18/02/19.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CreateOrderOutputInteractorProtocol: class {
-    func present(status: Bool)
+protocol ConfirmOrderDelegate {
+    func confirm()
 }

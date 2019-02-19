@@ -72,8 +72,17 @@ final class ConfirmOrderView: UIView {
         view.setTitleColor(.black, for: .normal)
         view.layer.cornerRadius = 10
         view.backgroundColor = .lightGray
+        view.addTarget(self, action: #selector(confirmOrder), for: .touchUpInside)
         return view
     }()
+    
+    var viewModel: ConfirmOrderViewModel? {
+        didSet {
+            updateView()
+        }
+    }
+    
+    var delegate: ConfirmOrderDelegate?
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -82,6 +91,16 @@ final class ConfirmOrderView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func confirmOrder() {
+        delegate?.confirm()
+    }
+    
+    func updateView() {
+        itemNameLabel.text = viewModel?.item
+        methodLabel.text = viewModel?.paymentMethod
+        valueLabel.text = viewModel?.price
     }
     
 }

@@ -6,4 +6,8 @@
 //  Copyright © 2019 Ricardo Rachaus. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol ConfirmOrderWireframeProtocol: class {
+    func showCreateOrder(from view: UIViewController)
+}

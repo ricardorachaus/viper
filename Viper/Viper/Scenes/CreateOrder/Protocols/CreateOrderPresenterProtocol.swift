@@ -6,4 +6,13 @@
 //  Copyright © 2019 Ricardo Rachaus. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol CreateOrderPresenterProtocol: class {
+    var interactor: CreateOrderInputInteractorProtocol? { get set }
+    var view: CreateOrderViewProtocol? { get set }
+    var wireframe: CreateOrderWireframeProtocol { get set }
+    
+    func request(order: Order)
+    func showOrder(from view: UIViewController)
+}

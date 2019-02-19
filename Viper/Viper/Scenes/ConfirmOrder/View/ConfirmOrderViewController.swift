@@ -15,10 +15,37 @@ final class ConfirmOrderViewController: UIViewController {
         return view
     }()
     
-    override func loadView() {
-        setupView()
+    var viewModel: ConfirmOrderViewModel
+    
+    var presenter: ConfirmOrderPresenterProtocol
+    
+    init(order: Order, presenter: ConfirmOrderPresenterProtocol) {
+        self.viewModel = ConfirmOrderViewModel(order: order)
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        setupView()
+        presenter.confirmOrder()
+    }
+    
+}
+
+extension ConfirmOrderViewController: ConfirmOrderDelegate {
+    func confirm() {
+        presenter.showCreateOrder(from: self)
+    }
+}
+
+extension ConfirmOrderViewController: ConfirmOrderViewProtocol {
+    func displayConfirmation() {
+        print("Order confirmed!")
+    }
 }
 
 extension ConfirmOrderViewController: CodeView {
@@ -27,6 +54,9 @@ extension ConfirmOrderViewController: CodeView {
     }
     
     func setupContraints() {}
-    func setupAdditionalConfiguration() {}
+    func setupAdditionalConfiguration() {
+        theView.delegate = self
+        theView.viewModel = viewModel
+    }
     
 }

@@ -8,6 +8,20 @@
 
 import Foundation
 
-final class CreateOrderInteractor {
+final class CreateOrderInteractor: CreateOrderInputInteractorProtocol {
+    var presenter: CreateOrderOutputInteractorProtocol
+    
+    init(presenter: CreateOrderOutputInteractorProtocol) {
+        self.presenter = presenter
+    }
+    
+    func create(order: Order) {
+        if !(order.item.isEmpty || order.paymentMethod.isEmpty ||
+            order.price.isEmpty) {
+            presenter.present(status: true)
+        } else {
+            presenter.present(status: false)
+        }
+    }
     
 }

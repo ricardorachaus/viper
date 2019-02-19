@@ -8,6 +8,14 @@
 
 import Foundation
 
-final class ConfirmOrderInteractor {
+final class ConfirmOrderInteractor: ConfirmOrderInputInteractorProtocol {
+    var presenter: ConfirmOrderOutputInteractorProtocol
     
+    init(presenter: ConfirmOrderOutputInteractorProtocol) {
+        self.presenter = presenter
+    }
+    
+    func confirm() {
+        presenter.presentConfirmation()
+    }
 }

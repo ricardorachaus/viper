@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol ConfirmOrderInputInteractorProtocol: class {
+    var presenter: ConfirmOrderOutputInteractorProtocol { get set }
+    
+    func confirm()
+}

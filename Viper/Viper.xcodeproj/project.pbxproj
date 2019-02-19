@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		362BD4BA221B8A5F006B010B /* CreateOrderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362BD4B9221B8A5E006B010B /* CreateOrderDelegate.swift */; };
+		362BD4BD221B8B97006B010B /* CreateOrderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362BD4BC221B8B97006B010B /* CreateOrderFactory.swift */; };
+		362BD4BF221B8EDA006B010B /* ConfirmOrderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362BD4BE221B8EDA006B010B /* ConfirmOrderFactory.swift */; };
+		362BD4C3221B92E3006B010B /* ConfirmOrderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362BD4C2221B92E3006B010B /* ConfirmOrderDelegate.swift */; };
 		36319821221B6F5700006002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36319820221B6F5700006002 /* AppDelegate.swift */; };
 		36319828221B6F5800006002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36319827221B6F5800006002 /* Assets.xcassets */; };
 		3631982B221B6F5800006002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36319829221B6F5800006002 /* LaunchScreen.storyboard */; };
@@ -37,6 +41,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		362BD4B9221B8A5E006B010B /* CreateOrderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderDelegate.swift; sourceTree = "<group>"; };
+		362BD4BC221B8B97006B010B /* CreateOrderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderFactory.swift; sourceTree = "<group>"; };
+		362BD4BE221B8EDA006B010B /* ConfirmOrderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderFactory.swift; sourceTree = "<group>"; };
+		362BD4C2221B92E3006B010B /* ConfirmOrderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderDelegate.swift; sourceTree = "<group>"; };
 		3631981D221B6F5700006002 /* Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36319820221B6F5700006002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36319827221B6F5800006002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +98,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		362BD4BB221B8B87006B010B /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				362BD4BC221B8B97006B010B /* CreateOrderFactory.swift */,
+				362BD4BE221B8EDA006B010B /* ConfirmOrderFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		36319814221B6F5700006002 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				36EC96A2221B6FB800B54969 /* Misc */,
+				362BD4BB221B8B87006B010B /* Factory */,
 				36EC96A1221B6FB200B54969 /* Scenes */,
 				3631982C221B6F5800006002 /* Info.plist */,
 			);
@@ -242,6 +260,7 @@
 				36563D7A221B812D00FFA0DA /* ConfirmOrderInputInteractorProtocol.swift */,
 				36563D7E221B814B00FFA0DA /* ConfirmOrderOutputInteractorProtocol.swift */,
 				36563D80221B815500FFA0DA /* ConfirmOrderWireframeProtocol.swift */,
+				362BD4C2221B92E3006B010B /* ConfirmOrderDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -254,6 +273,7 @@
 				36563D70221B80CF00FFA0DA /* CreateOrderInputInteractorProtocol.swift */,
 				36563D72221B80DF00FFA0DA /* CreateOrderOutputInteractorProtocol.swift */,
 				36563D74221B80EA00FFA0DA /* CreateOrderWireframeProtocol.swift */,
+				362BD4B9221B8A5E006B010B /* CreateOrderDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -407,9 +427,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				36319821221B6F5700006002 /* AppDelegate.swift in Sources */,
+				362BD4BA221B8A5F006B010B /* CreateOrderDelegate.swift in Sources */,
 				36563D51221B7EFF00FFA0DA /* CreateOrderViewController.swift in Sources */,
 				36563D5B221B7F7D00FFA0DA /* ConfirmOrderViewController.swift in Sources */,
 				36563D7F221B814B00FFA0DA /* ConfirmOrderOutputInteractorProtocol.swift in Sources */,
+				362BD4BF221B8EDA006B010B /* ConfirmOrderFactory.swift in Sources */,
 				36563D6F221B80C400FFA0DA /* CreateOrderPresenterProtocol.swift in Sources */,
 				36563D55221B7F3F00FFA0DA /* CreateOrderInteractor.swift in Sources */,
 				36563D75221B80EA00FFA0DA /* CreateOrderWireframeProtocol.swift in Sources */,
@@ -428,7 +450,9 @@
 				36563D71221B80CF00FFA0DA /* CreateOrderInputInteractorProtocol.swift in Sources */,
 				36563D81221B815500FFA0DA /* ConfirmOrderWireframeProtocol.swift in Sources */,
 				36563D69221B808800FFA0DA /* ConfirmOrderEntity.swift in Sources */,
+				362BD4BD221B8B97006B010B /* CreateOrderFactory.swift in Sources */,
 				36563D5D221B7F8F00FFA0DA /* ConfirmOrderView.swift in Sources */,
+				362BD4C3221B92E3006B010B /* ConfirmOrderDelegate.swift in Sources */,
 				36563D79221B812400FFA0DA /* ConfirmOrderPresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

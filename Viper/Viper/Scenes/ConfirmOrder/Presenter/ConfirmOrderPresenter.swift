@@ -6,8 +6,29 @@
 //  Copyright © 2019 Ricardo Rachaus. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-final class ConfirmOrderPresenter {
+final class ConfirmOrderPresenter: ConfirmOrderPresenterProtocol, ConfirmOrderOutputInteractorProtocol {
+    
+    var interactor: ConfirmOrderInputInteractorProtocol?
+    var view: ConfirmOrderViewProtocol?
+    var wireframe: ConfirmOrderWireframeProtocol
+    
+    init(wireframe: ConfirmOrderWireframeProtocol) {
+        self.wireframe = wireframe
+    }
+    
+    func confirmOrder() {
+        interactor?.confirm()
+    }
+    
+    func showCreateOrder(from view: UIViewController) {
+        wireframe.showCreateOrder(from: view)
+    }
+    
+    func presentConfirmation() {
+        view?.displayConfirmation()
+    }
+    
     
 }

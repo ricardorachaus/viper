@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct Order {
+    var item: String
+    var paymentMethod: String
+    var price: String
+}

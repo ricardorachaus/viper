@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol ConfirmOrderOutputInteractorProtocol: class {
+    func presentConfirmation()
+}
