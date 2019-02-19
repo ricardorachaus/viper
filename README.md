@@ -1,2 +1,3 @@
-# viper
-Viper Architecture Example
+# Viper
+
+Example of Viper Architecture using View Code instead of storyboards.
